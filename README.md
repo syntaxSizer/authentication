@@ -1,3 +1,3 @@
-# authentication
+# Authentication
 
-## Blog page Authenticaition 
+## Blog page repo
