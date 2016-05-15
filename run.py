@@ -3,6 +3,7 @@ from flask import Flask,render_template
 #from flask.ext.script import Manager
 #from flask.ext.moment import Moment
 #from datetime import datetime
+from flask.ext.wtf import Form
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import Required
 #moment = Moment(app)
@@ -15,8 +16,21 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 
 class NameForm(Form):
     name = StringField('What is your name?', validators=[Required()])
-    password=PasswordField('PassWord',validators=[Required()])
     submit = SubmitField('Submit')
+
+  
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    name = None
+    form = NameForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = ''
+    return render_template('index.html', form=form, name=name)
+
+
+
 
 
 
