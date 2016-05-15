@@ -1,7 +1,6 @@
 /******************************************
 GENERAL
 *******************************************/
-
 .wrap{
 	width:90%;
 	margin: 0 auto;
@@ -13,14 +12,28 @@ GENERAL
 /*******************************************
 NAV
 ********************************************/
+.black{
+background-color:#222;
+padding:23px;
+font-size:2em;
+border-radius:3px;
+}
+
+.navbar{
+text-decoration: none;
+}
 
 
 
+.navbar a {
+color:#F07746;
+}
 
+.page-header{
+ 
+padding:30px;
 
-
-
-
+}
 
 
 /*******************************************
