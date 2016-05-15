@@ -11,12 +11,13 @@
 
 </head>
   <body>
-    <div>Microblog:
-        <a href="{{ url_for('index') }}">Home</a>
-        {% if g.user.is_authenticated %}
-        | <a href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
-    </div>
+ {% block navbar %}
+<div class="navbar black " role="navigation">
+            <a href="/">FLASKY</a>
+                <a href="/">HOME</a></li>
+</div>
+
+{% endblock %}   
     <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
