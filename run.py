@@ -1,11 +1,10 @@
 #!web_project/flask/bin/python
-
-from flask import Flask
-from flask.ext.script import Manager
+from flask import Flask,render_template
+#from flask.ext.script import Manager
 
 app = Flask(__name__)
 
-manager = Manager(app)
+#manager = Manager(app)
 
 
 
@@ -18,4 +17,5 @@ def user(name):
     return '<h1>Hello, %s!</h1>' % name
 
 if __name__ == '__main__':
-   manager.run()
+ #  manager.run()
+    app.run(debug=True)
