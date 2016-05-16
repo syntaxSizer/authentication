@@ -1,5 +1,5 @@
 {%"base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap" as wtf %}
 
 {% block title %}Flasky{% endblock %}
 
@@ -7,5 +7,11 @@
 <div class="page-header">
     <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
 </div>
-{{ wtf.quick_form(form) }}
+<form class="form form-horizontal" method="post" role="form">
+  {{ form.hidden_tag() }}
+  {{ wtf.form_errors(form, hiddens="only") }}
+
+  {{ wtf.form_field(form.field1) }}
+  {{ wtf.form_field(form.field2) }}
+</form>
 {% endblock %}
