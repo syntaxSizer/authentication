@@ -33,6 +33,10 @@
     {% endif %}
     {% endwith %}
     {% block content %}{% endblock %}
-
+ 
+{%block scripts %}
+{{ super() }}
+moment.include_moment() }}
+endblock %}
   </body>
 </html>

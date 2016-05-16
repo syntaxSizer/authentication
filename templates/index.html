@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% import "bootstrap/ wtf.html" as wtf %}
 
 {% block title %}Flasky{% endblock %}
@@ -9,4 +9,7 @@
 <p> things are... </p>
 </div> 
 {{ wtf.quick_form(form)}}
+
+<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
 {% endblock %}
